@@ -2,27 +2,13 @@
 > pokdex@1.0.0 dev
 > npx tsc && node dist/main.js
 
-Pokedex> Throwing a Pokeball at tt...
-Could not find that pokemon.
-Pokedex> Throwing a Pokeball at pickacho...
-Could not find that pokemon.
-Pokedex> Throwing a Pokeball at pikachu...
-pikachu escaped!
 Pokedex> Throwing a Pokeball at pidgey...
 pidgey was caught!
-Pokedex> Name: pidgey
-Height: 3
-Weight: 18
-Stats:
-  -hp: 40
-  -attack: 45
-  -defense: 40
-  -special-attack: 35
-  -special-defense: 35
-  -speed: 56
-Types:
-  - normal
-  - flying
-Pokedex> you have not caught pikachu yet!
-Pokedex> 'yy' is not a valid Pokemon name.
+You may now inspect it with the inspect command.
+Pokedex> Throwing a Pokeball at caterpie...
+caterpie was caught!
+You may now inspect it with the inspect command.
+Pokedex> Your Pokedex:
+ - pidgey
+ - caterpie
 Pokedex> 
