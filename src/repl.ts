@@ -1,6 +1,5 @@
 import { State } from "./state.js";
 
-
 export function cleanInput(input: string): string[] {
   return input
     .trim()
@@ -13,7 +12,7 @@ export function startREPL(state: State) {
   state.rl.setPrompt("Pokedex> ");
   state.rl.prompt();
 
-  state.rl.on("line", (line) => {
+  state.rl.on("line", async (line) => {
     const words = cleanInput(line);
     if (words.length === 0) {
       state.rl.prompt();
@@ -22,10 +21,9 @@ export function startREPL(state: State) {
 
     const commandName = words[0];
 
-   
     if (commandName in state.commands) {
       try {
-        state.commands[commandName].callback(state);
+        await state.commands[commandName].callback(state);
       } catch (err) {
         console.error("Error executing command:", err);
       }
