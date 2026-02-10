@@ -8,12 +8,13 @@ export type State = {
   pokeAPI: PokeAPI;           
   nextLocationsURL: string | null; 
   prevLocationsURL: string | null;
+  pokedex: Record<string, any>;
 };
 
 export type CLICommand = {
   name: string;
   description: string;
-  callback: (state: State) => void;
+  callback: (state: State, ...arg:string[]) => void;
 };
 
 export function initState(): State {
@@ -27,6 +28,7 @@ export function initState(): State {
     commands: getCommands(),
     pokeAPI: pokeAPI,        
     nextLocationsURL: null,
-    prevLocationsURL: null  
+    prevLocationsURL: null,
+    pokedex: {},  
   };
 }

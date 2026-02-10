@@ -20,10 +20,11 @@ export function startREPL(state: State) {
     }
 
     const commandName = words[0];
+    const args = words.slice(1);
 
     if (commandName in state.commands) {
       try {
-        await state.commands[commandName].callback(state);
+        await state.commands[commandName].callback(state,...args);
       } catch (err) {
         console.error("Error executing command:", err);
       }
